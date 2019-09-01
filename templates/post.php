@@ -17,8 +17,6 @@ use App\src\DAO\CommentDAO;
 <h1>Un billet pour l'Alaska</h1>
 <a href="../public/index.php">Retour à l'accueil</a>
 <?php
-$post = new PostDAO();
-$posts = $post->getPost($_GET['postId']);
 while($post = $posts->fetch())
 {
     ?>
@@ -35,8 +33,6 @@ $posts->closeCursor();
 ?>
 <br>
 <?php
-$comment = new CommentDAO();
-$comments = $comment->getCommentFromPost($_GET['postId']);
 while($comment = $comments->fetch())
 {
     ?>
