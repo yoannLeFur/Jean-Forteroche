@@ -1,7 +1,9 @@
 <?php
 
-require 'Database.php';
-require 'post.php'
+require '../src/DAO/DAO.php';
+require '../src/DAO/PostDAO.php';
+
+use App\src\DAO\PostDAO;
 
 ?>
 
@@ -14,13 +16,13 @@ require 'post.php'
 <body>
     <h1>Un billet pour l'Alaska</h1>
     <?php
-    $post = new Post();
+    $post = new PostDAO();
     $posts = $post->getPosts();
     while($post = $posts->fetch())
     {
         ?>
         <div>
-            <h2><a href="showPost.php?postId=<?= strip_tags($post->id);?>"><?= strip_tags($post->title);?></a></h2>
+            <h2><a href="post.php?postId=<?= strip_tags($post->id);?>"><?= strip_tags($post->title);?></a></h2>
             <p><?= strip_tags($post->content);?></p>
             <p><?= strip_tags($post->author);?></p>
             <p>Créé le : <?= strip_tags($post->createdAt);?></p>
