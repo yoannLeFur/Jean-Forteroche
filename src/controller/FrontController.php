@@ -25,7 +25,7 @@ class FrontController
 
     public function post($postId)
     {
-        $posts = $this->postDAO->getPost($postId);
+        $post = $this->postDAO->getPost($postId);
         $comments = $this->commentDAO->getCommentsFromPost($postId);
         require '../templates/post.php';
     }

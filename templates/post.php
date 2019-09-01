@@ -16,36 +16,22 @@ use App\src\DAO\CommentDAO;
 <br>
 <h1>Un billet pour l'Alaska</h1>
 <a href="../public/index.php">Retour à l'accueil</a>
-<?php
-while($post = $posts->fetch())
-{
-    ?>
     <div>
-        <h2><?= strip_tags($post->title);?></h2>
-        <p><?= strip_tags($post->content);?></p>
-        <p><?= strip_tags($post->author);?></p>
-        <p>Créé le : <?= strip_tags($post->createdAt);?></p>
+        <h2><?= strip_tags($post->getTitle());?></h2>
+        <p><?= strip_tags($post->getContent());?></p>
+        <p><?= strip_tags($post->getAuthor());?></p>
+        <p>Créé le : <?= strip_tags($post->getCreatedAt());?></p>
     </div>
     <br>
-    <?php
-}
-$posts->closeCursor();
-?>
 <br>
-<?php
-while($comment = $comments->fetch())
-{
-    ?>
+<?php foreach($comments as $comment) :?>
     <div>
-        <h2><?= strip_tags($comment->pseudo);?></h2>
-        <p><?= strip_tags($comment->content);?></p>
-        <p>Créé le : <?= strip_tags($comment->createdAt);?></p>
+        <h2><?= strip_tags($comment->getPseudo());?></h2>
+        <p><?= strip_tags($comment->getContent());?></p>
+        <p>Créé le : <?= strip_tags($comment->getCreatedAt());?></p>
     </div>
     <br>
-    <?php
-}
-$posts->closeCursor();
-?>
+    <?php endforeach; ?>
 </body>
 <footer>
     <p>Un site crée par Yoann Le Fur</p>
