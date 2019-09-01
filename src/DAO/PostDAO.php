@@ -2,13 +2,33 @@
 
 namespace App\src\DAO;
 
+use App\src\model\Post;
+
 class PostDAO extends DAO {
+
+    private function buildObject($row)
+    {
+        $post = new Post();
+        $post->setId($row['id']);
+        $post->setTitle($row['title']);
+        $post->setContent($row['content']);
+        $post->setAuthor($row['author']);
+        $post->setCreatedAt($row['createdAt']);
+        return $post;
+    }
 
     //get all posts
     public function getPosts() {
 
         $sql = 'SELECT id, title, content, author, createdAt FROM blog_jf_post ORDER BY id';
-        return $this->createQuery($sql);
+        $result = $this->createQuery($sql);
+        $posts = [];
+        foreach ($result as $row){
+            $postId = $row['id'];
+            $posts[$postId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $posts;
 
     }
 
@@ -16,7 +36,10 @@ class PostDAO extends DAO {
     public function getPost($postId)
     {
         $sql = 'SELECT id, title, content, author, createdAt FROM blog_jf_post WHERE id = ?';
-        return $this->createQuery($sql, [$postId]);
+        $result = $this->createQuery($sql, [$postId]);
+        $post = $result->fetch();
+        $result->closeCursor();
+        return $this->buildObject($post);
     }
 
 }

@@ -25,7 +25,6 @@ abstract class DAO {
         //try to connect to database
         try{
             $connection = new PDO(DB_HOST, DB_USER, DB_PASS);
-            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return  $connection;
         }
         //if connection failed, we catch an error
@@ -40,12 +39,10 @@ abstract class DAO {
         if($parameters)
         {
             $result = $this->getConnection()->prepare($sql);
-            $result->setFetchMode(PDO::FETCH_CLASS, static::class);
             $result->execute($parameters);
             return $result;
         }
         $result = $this->getConnection()->query($sql);
-        $result->setFetchMode(PDO::FETCH_CLASS, static::class);
         return $result;
     }
 
