@@ -15,8 +15,6 @@ use App\src\DAO\PostDAO;
 <body>
     <h1>Un billet pour l'Alaska</h1>
     <?php
-    $post = new PostDAO();
-    $posts = $post->getPosts();
     while($post = $posts->fetch())
     {
         ?>
