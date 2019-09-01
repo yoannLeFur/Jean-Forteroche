@@ -1,8 +1,11 @@
 <?php
 
-require 'Database.php';
-require 'post.php';
-require 'comment.php';
+require '../src/DAO/DAO.php';
+require '../src/DAO/PostDAO.php';
+require '../src/DAO/CommentDAO.php';
+
+use App\src\DAO\PostDAO;
+use App\src\DAO\CommentDAO;
 
 ?>
 
@@ -16,7 +19,7 @@ require 'comment.php';
 <h1>Un billet pour l'Alaska</h1>
 <a href="layout.php">Retour à l'accueil</a>
 <?php
-$post = new Post();
+$post = new PostDAO();
 $posts = $post->getPost($_GET['postId']);
 while($post = $posts->fetch())
 {
@@ -34,7 +37,7 @@ $posts->closeCursor();
 ?>
 <br>
 <?php
-$comment = new Comment();
+$comment = new CommentDAO();
 $comments = $comment->getCommentFromPost($_GET['postId']);
 while($comment = $comments->fetch())
 {
