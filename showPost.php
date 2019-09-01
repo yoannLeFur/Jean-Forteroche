@@ -21,10 +21,10 @@ while($post = $posts->fetch())
 {
     ?>
     <div>
-        <h2><?= strip_tags($post['title']);?></h2>
-        <p><?= strip_tags($post['content']);?></p>
-        <p><?= strip_tags($post['author']);?></p>
-        <p>Créé le : <?= strip_tags($post['createdAt']);?></p>
+        <h2><?= strip_tags($post->title);?></h2>
+        <p><?= strip_tags($post->content);?></p>
+        <p><?= strip_tags($post->author);?></p>
+        <p>Créé le : <?= strip_tags($post->createdAt);?></p>
     </div>
     <br>
     <?php
