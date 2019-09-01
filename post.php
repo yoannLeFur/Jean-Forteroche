@@ -5,7 +5,6 @@ class Post extends Database {
     //get all posts
     public function getPosts() {
 
-
         $sql = 'SELECT id, title, content, author, createdAt FROM blog_jf_post ORDER BY id';
         return $this->createQuery($sql);
 
