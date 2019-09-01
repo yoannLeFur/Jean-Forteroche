@@ -20,10 +20,10 @@ require 'post.php'
     {
         ?>
         <div>
-            <h2><a href="showPost.php?postId=<?= strip_tags($post['id']);?>"><?= strip_tags($post['title']);?></a></h2>
-            <p><?= strip_tags($post['content']);?></p>
-            <p><?= strip_tags($post['author']);?></p>
-            <p>Créé le : <?= strip_tags($post['createdAt']);?></p>
+            <h2><a href="showPost.php?postId=<?= strip_tags($post->id);?>"><?= strip_tags($post->title);?></a></h2>
+            <p><?= strip_tags($post->content);?></p>
+            <p><?= strip_tags($post->author);?></p>
+            <p>Créé le : <?= strip_tags($post->createdAt);?></p>
         </div>
         <br>
         <?php

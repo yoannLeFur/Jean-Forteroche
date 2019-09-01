@@ -1,27 +1,21 @@
 <?php
 
-class Post {
+class Post extends Database {
 
     //get all posts
     public function getPosts() {
 
-        $db = new Database();
-        $connection = $db->getConnexion();
-        $result = $connection->query('SELECT id, title, content, author, createdAt FROM blog_jf_post ORDER BY id DESC');
-        return $result;
+
+        $sql = 'SELECT id, title, content, author, createdAt FROM blog_jf_post ORDER BY id';
+        return $this->createQuery($sql);
 
     }
 
     //get one post
     public function getPost($postId)
     {
-        $db = new Database();
-        $connection = $db->getConnexion();
-        $result = $connection->prepare('SELECT id, title, content, author, createdAt FROM blog_jf_post WHERE id = ?');
-        $result->execute([
-            $postId
-        ]);
-        return $result;
+        $sql = 'SELECT id, title, content, author, createdAt FROM blog_jf_post WHERE id = ?';
+        return $this->createQuery($sql, [$postId]);
     }
 
 }
