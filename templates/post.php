@@ -1,8 +1,6 @@
 <?php
 
-require '../src/DAO/DAO.php';
-require '../src/DAO/PostDAO.php';
-require '../src/DAO/CommentDAO.php';
+require '../vendor/autoload.php';
 
 use App\src\DAO\PostDAO;
 use App\src\DAO\CommentDAO;
@@ -17,7 +15,7 @@ use App\src\DAO\CommentDAO;
 </head>
 <br>
 <h1>Un billet pour l'Alaska</h1>
-<a href="layout.php">Retour à l'accueil</a>
+<a href="../public/index.php">Retour à l'accueil</a>
 <?php
 $post = new PostDAO();
 $posts = $post->getPost($_GET['postId']);
