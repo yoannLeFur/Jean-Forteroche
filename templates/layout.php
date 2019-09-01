@@ -1,7 +1,6 @@
 <?php
 
-require '../src/DAO/DAO.php';
-require '../src/DAO/PostDAO.php';
+require '../vendor/autoload.php';
 
 use App\src\DAO\PostDAO;
 
@@ -22,7 +21,7 @@ use App\src\DAO\PostDAO;
     {
         ?>
         <div>
-            <h2><a href="post.php?postId=<?= strip_tags($post->id);?>"><?= strip_tags($post->title);?></a></h2>
+            <h2><a href="../public/index.php?route=post&postId=<?= strip_tags($post->id);?>"><?= strip_tags($post->title);?></a></h2>
             <p><?= strip_tags($post->content);?></p>
             <p><?= strip_tags($post->author);?></p>
             <p>Créé le : <?= strip_tags($post->createdAt);?></p>
