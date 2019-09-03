@@ -42,4 +42,11 @@ class PostDAO extends DAO {
         return $this->buildObject($post);
     }
 
+    public function addPost($post)
+    {
+        extract($post);
+        $sql = 'INSERT INTO blog_jf_post (title, content, author, createdAt) VALUES (?,?,?, NOW())';
+        $this->createQuery($sql, [$title, $content, $author]);
+    }
+
 }
