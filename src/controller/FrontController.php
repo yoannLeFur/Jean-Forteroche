@@ -1,24 +1,10 @@
 <?php
 
 namespace App\src\controller;
-use App\src\DAO\PostDAO;
-use App\src\DAO\CommentDAO;
-use App\src\model\View;
 
 
-class FrontController
+class FrontController extends Controller
 {
-
-    private $postDAO;
-    private $commentDAO;
-    private $view;
-
-    public function __construct()
-    {
-        $this->postDAO = new PostDAO();
-        $this->commentDAO = new CommentDAO();
-        $this->view = new View();
-    }
 
     public function home()
     {
