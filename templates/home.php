@@ -1,15 +1,15 @@
 <?php $this->title = "Accueil"; ?>
-<?= $this->session->show('add_post'); ?>
+<?= $this->session->show('addArticle'); ?>
 <h1>Un billet pour l'Alaska</h1>
-<a href="../public/index.php?route=addPost">Nouvel article</a>
-<?php foreach ($posts as $post) : ?>
+<a href="../public/index.php?route=addArticle">Nouvel article</a>
+<?php foreach ($articles as $article) : ?>
     <div>
         <h2>
-            <a href="../public/index.php?route=post&postId=<?= strip_tags($post->getId()); ?>"><?= strip_tags($post->getTitle()); ?></a>
+            <a href="../public/index.php?route=article&articleId=<?= strip_tags($article->getId()); ?>"><?= strip_tags($article->getTitle()); ?></a>
         </h2>
-        <p><?= strip_tags($post->getContent()); ?></p>
-        <p><?= strip_tags($post->getAuthor()); ?></p>
-        <p>Créé le : <?= strip_tags($post->getCreatedAt()); ?></p>
+        <p><?= strip_tags($article->getContent()); ?></p>
+        <p><?= strip_tags($article->getAuthor()); ?></p>
+        <p>Créé le : <?= strip_tags($article->getCreatedAt()); ?></p>
+        <a href="../public/index.php?route=editArticle&articleId=<?= strip_tags($article->getId()); ?>"">Modifier un article</a>
     </div>
-    <br>
 <?php endforeach; ?>
