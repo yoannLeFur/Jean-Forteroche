@@ -1,11 +1,11 @@
-<?php $this->title = "Post"; ?>
+<?php $this->title = "Article"; ?>
 <h1>Un billet pour l'Alaska</h1>
 <a href="../public/index.php">Retour à l'accueil</a>
 <div>
-    <h2><?= strip_tags($post->getTitle()); ?></h2>
-    <p><?= strip_tags($post->getContent()); ?></p>
-    <p><?= strip_tags($post->getAuthor()); ?></p>
-    <p>Créé le : <?= strip_tags($post->getCreatedAt()); ?></p>
+    <h2><?= strip_tags($article->getTitle()); ?></h2>
+    <p><?= strip_tags($article->getContent()); ?></p>
+    <p><?= strip_tags($article->getAuthor()); ?></p>
+    <p>Créé le : <?= strip_tags($article->getCreatedAt()); ?></p>
 </div>
 <br>
 <br>

@@ -16,10 +16,10 @@ class CommentDAO extends DAO {
     }
 
     //get all comments by one post
-    public function getCommentsFromPost($postId) {
+    public function getCommentsFromArticle($articleId) {
 
-        $sql = 'SELECT id, pseudo, content, createdAt FROM blog_jf_comment WHERE post_id = ? ORDER BY createdAt DESC';
-        $result = $this->createQuery($sql, [$postId]);
+        $sql = 'SELECT id, pseudo, content, createdAt FROM blog_jf_comment WHERE article_id = ? ORDER BY createdAt DESC';
+        $result = $this->createQuery($sql, [$articleId]);
         $comments = [];
         foreach ($result as $row) {
             $commentId = $row['id'];

@@ -2,7 +2,7 @@
 <h1>Mon blog</h1>
 <p>En construction</p>
 <div>
-    <form method="post" action="../public/index.php?route=addPost">
+    <form method="post" action="../public/index.php?route=addArticle">
         <div>
             <div>
                 <label for="title">Titre</label>
