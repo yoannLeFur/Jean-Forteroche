@@ -2,6 +2,7 @@
 <h1>Un billet pour l'alaska</h1>
 <div>
     <form method="post" action="../public/index.php?route=editArticle&articleId=<?= strip_tags($article->getId()); ?>">
+        <div>
             <div>
                 <label for="title">Titre</label>
             </div>

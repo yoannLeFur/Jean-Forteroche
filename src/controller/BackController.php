@@ -49,4 +49,11 @@ class BackController extends Controller
         header('Location: ../public/index.php');
     }
 
+    public function logout()
+    {
+        $this->session->stop();
+        $this->session->set('logout', 'À bientôt');
+        header('Location: ../public/index.php');
+    }
+
 }
