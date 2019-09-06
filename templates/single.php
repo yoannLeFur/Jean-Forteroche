@@ -32,6 +32,12 @@
         <h2><?= strip_tags($comment->getPseudo()); ?></h2>
         <p><?= strip_tags($comment->getContent()); ?></p>
         <p>Créé le : <?= strip_tags($comment->getCreatedAt()); ?></p>
+        <?php if($comment->isFlag()) :?>
+        <p>Ce commentaire a été signalé</p>
+        <?php endif; ?>
+        <?php if(!$comment->isFlag()) : ?>
+        <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
+        <?php endif; ?>
     </div>
     <br>
 <?php endforeach; ?>
