@@ -8,7 +8,7 @@
                 <label for="title">Titre</label>
             </div>
             <div>
-                <input type="text" id="title" name="title">
+                <input type="text" id="title" name="title" minlength="5" maxlength="50" required>
             </div>
         </div>
         <div>
@@ -16,7 +16,7 @@
                 <label for="content">Contenu</label>
             </div>
             <div>
-                <textarea id="content" name="content"></textarea>
+                <textarea id="content" name="content" minlength="10" required></textarea>
             </div>
         </div>
         <div>
