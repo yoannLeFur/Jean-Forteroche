@@ -7,8 +7,26 @@
     <p><?= strip_tags($article->getAuthor()); ?></p>
     <p>Créé le : <?= strip_tags($article->getCreatedAt()); ?></p>
 </div>
-<br>
-<br>
+<div>
+    <form method="post" action="../public/index.php?route=addComment&articleId=<?= strip_tags($article->getId()); ?>">
+        <div>
+            <div>
+                <label for="pseudo">Pseudo</label>
+            </div>
+            <div>
+                <input type="text" id="pseudo" name="pseudo" minlength="2" maxlength="50" required>
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="content">Message</label>
+            </div>
+            <div>
+                <textarea id="content" name="content" rows="10" minlength="10" maxlength="400" required></textarea>
+            </div>
+        </div>
+        <input type="submit" value="Publier" id="submit" name="submit">
+    </form>
 <?php foreach ($comments as $comment) : ?>
     <div>
         <h2><?= strip_tags($comment->getPseudo()); ?></h2>
@@ -17,3 +35,4 @@
     </div>
     <br>
 <?php endforeach; ?>
+</div>
