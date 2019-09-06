@@ -11,5 +11,6 @@
         <p><?= strip_tags($article->getAuthor()); ?></p>
         <p>Créé le : <?= strip_tags($article->getCreatedAt()); ?></p>
         <a href="../public/index.php?route=editArticle&articleId=<?= strip_tags($article->getId()); ?>"">Modifier un article</a>
+        <a href="../public/index.php?route=deleteArticle&articleId=<?= strip_tags($article->getId()); ?>"">Supprimer un article</a>
     </div>
 <?php endforeach; ?>

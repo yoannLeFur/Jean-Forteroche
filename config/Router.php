@@ -1,13 +1,15 @@
 <?php
 
 namespace App\config;
+
 use App\src\controller\FrontController;
 use App\src\controller\ErrorController;
 use App\src\controller\BackController;
 use Exception;
 
 
-class Router {
+class Router
+{
 
     private $frontController;
     private $errorController;
@@ -19,33 +21,31 @@ class Router {
         $this->frontController = new FrontController();
         $this->errorController = new ErrorController();
         $this->backController = new BackController();
-        $this->request= new Request();
+        $this->request = new Request();
     }
 
-    public function run() {
+    public function run()
+    {
 
         $route = $this->request->getGet()->get('route');
 
-        try{
-            if(isset($route))
-            {
-                if($route === 'article'){
+        try {
+            if (isset($route)) {
+                if ($route === 'article') {
                     $this->frontController->article($this->request->getGet()->get('articleId'));
-                } elseif($route === 'addArticle') {
+                } elseif ($route === 'addArticle') {
                     $this->backController->addArticle($this->request->getPost());
-                } elseif($route === 'editArticle') {
+                } elseif ($route === 'editArticle') {
                     $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
-                }
-                else{
+                } elseif ($route === 'deleteArticle') {
+                    $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
+                } else {
                     $this->errorController->errorNotFound();
                 }
-            }
-            else{
+            } else {
                 $this->frontController->home();
             }
-        }
-        catch (Exception $e)
-        {
+        } catch (Exception $e) {
             $this->errorController->errorServer();
         }
     }
