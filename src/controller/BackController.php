@@ -34,4 +34,12 @@ class BackController extends Controller
             'article' => $article
         ]);
     }
+
+    public function deleteArticle($articleId)
+    {
+        $this->articleDAO->deleteArticle($articleId);
+        $this->session->set('deleteArticle', 'L\' article a bien été supprimé');
+        header('Location: ../public/index.php');
+    }
+
 }
