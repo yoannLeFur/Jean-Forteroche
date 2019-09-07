@@ -1,22 +1,13 @@
 <div class="row mx-0">
     <div class="col-12 mt-5 pb-3">
         <h1 class="text-center">Administration</h1>
+        <a href="../public/index.php?route=admin">Retour à l'administration</a>
     </div>
-    <div>
-        <h3 class="text-center m-0">Liste des commentaires signalés</h3>
-    </div>
-    <?php foreach ($comments
 
-    as $comment) : ?>
+    <?php foreach ($comments as $comment) : ?>
     <div>
         <div>
             <h4><?= ucfirst(strip_tags($comment->getPseudo())); ?></h4>
-        </div>
-        <div>
-            <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>"><i
-                        class="fa fa-trash" aria-hidden="true"></i></a>
-            <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>"><i
-                        class="fa fa-check" aria-hidden="true"></i></a>
         </div>
     </div>
     <div>

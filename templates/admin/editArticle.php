@@ -28,5 +28,5 @@
         </div>
         <input type="submit" value="Envoyer" id="submit" name="submit">
     </form>
-    <a href="../public/index.php">Retour à l'accueil</a>
+    <a href="../public/index.php?route=admin">Retour à l'administration</a>
 </div>

@@ -11,7 +11,7 @@ class FrontController extends Controller
     public function home()
     {
         $articles = $this->articleDAO->getArticles();
-        return $this->view->render('home', [
+        return $this->view->renderUsers('home', [
             'articles' => $articles
         ]);
     }
@@ -20,7 +20,7 @@ class FrontController extends Controller
     {
         $article = $this->articleDAO->getArticle($articleId);
         $comments = $this->commentDAO->getCommentsFromArticle($articleId);
-        return $this->view->render('single', [
+        return $this->view->renderUsers('single', [
             'article' => $article,
             'comments' => $comments
         ]);
@@ -54,11 +54,11 @@ class FrontController extends Controller
             }
             else {
                 $this->session->set('error_login', 'Le pseudo ou le mot de passe sont incorrects');
-                return $this->view->render('login', [
+                return $this->view->renderAdmin('login', [
                     'post'=> $post
                 ]);
             }
         }
-        return $this->view->render('login');
+        return $this->view->renderUsers('login');
     }
 }

@@ -18,9 +18,31 @@ class View
     }
 
 
-    public function render($template, $data = [])
+    public function renderUsers($template, $data = [])
     {
-        $this->file = '../templates/'.$template.'.php';
+        $this->file = '../templates/users/'.$template.'.php';
+        $content  = $this->renderFile($this->file, $data);
+        $view = $this->renderFile('../templates/layout.php', [
+            'title' => $this->title,
+            'content' => $content
+        ]);
+        echo $view;
+    }
+
+    public function renderAdmin($template, $data = [])
+    {
+        $this->file = '../templates/admin/'.$template.'.php';
+        $content  = $this->renderFile($this->file, $data);
+        $view = $this->renderFile('../templates/layout.php', [
+            'title' => $this->title,
+            'content' => $content
+        ]);
+        echo $view;
+    }
+
+    public function renderError($template, $data = [])
+    {
+        $this->file = '../templates/error/'.$template.'.php';
         $content  = $this->renderFile($this->file, $data);
         $view = $this->renderFile('../templates/layout.php', [
             'title' => $this->title,

@@ -1,5 +1,6 @@
 <?php $this->title = "Les articles"; ?>
     <h1>Un billet pour l'Alaska</h1>
+    <a href="../public/index.php?route=admin">Retour à l'administration</a>
 <?php foreach ($articles as $article) : ?>
     <div>
         <h2>
