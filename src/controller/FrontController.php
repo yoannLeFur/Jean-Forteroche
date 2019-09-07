@@ -50,7 +50,7 @@ class FrontController extends Controller
                 $this->session->set('login', 'Content de vous revoir');
                 $this->session->set('id', $result['result']['id']);
                 $this->session->set('email', $post->get('email'));
-                header('Location: ../public/index.php');
+                header('Location: ../public/index.php?route=admin');
             }
             else {
                 $this->session->set('error_login', 'Le pseudo ou le mot de passe sont incorrects');
