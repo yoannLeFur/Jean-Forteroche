@@ -27,28 +27,38 @@ class Router
     public function run()
     {
 
+        $session = $this->request->getSession();
         $route = $this->request->getGet()->get('route');
 
         try {
             if (isset($route)) {
+
                 if ($route === 'article') {
                     $this->frontController->article($this->request->getGet()->get('articleId'));
-                } elseif ($route === 'addArticle') {
-                    $this->backController->addArticle($this->request->getPost());
-                } elseif ($route === 'editArticle') {
-                    $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
-                } elseif ($route === 'deleteArticle') {
-                    $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
                 } elseif ($route === 'addComment') {
                     $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
                 } elseif ($route === 'flagComment') {
                     $this->frontController->flagComment($this->request->getGet()->get('commentId'));
-                } elseif ($route === 'deleteComment') {
-                    $this->backController->deleteComment($this->request->getGet()->get('commentId'));
-                }  elseif($route === 'login'){
+                } elseif($route === 'login'){
                     $this->frontController->login($this->request->getPost());
-                } elseif($route === 'logout'){
+                } elseif ($route === 'articles' && $session->get('email')) {
+                    $this->backController->articles();
+                } elseif ($route === 'addArticle' && $session->get('email')) {
+                    $this->backController->addArticle($this->request->getPost());
+                } elseif ($route === 'editArticle' && $session->get('email')) {
+                    $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
+                } elseif ($route === 'deleteArticle' && $session->get('email')) {
+                    $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
+                } elseif ($route === 'flagComments' && $session->get('email')) {
+                    $this->backController->flagComments();
+                } elseif ($route === 'unflagComment' && $session->get('email')) {
+                    $this->backController->unflagComment($this->request->getGet()->get('commentId'));
+                } elseif ($route === 'deleteComment' && $session->get('email')) {
+                    $this->backController->deleteComment($this->request->getGet()->get('commentId'));
+                } elseif($route === 'logout' && $session->get('email')){
                     $this->backController->logout();
+                } elseif($route === 'admin' && $session->get('email')){
+                    $this->backController->admin();
                 } else {
                     $this->errorController->errorNotFound();
                 }
