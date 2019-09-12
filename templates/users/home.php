@@ -1,5 +1,8 @@
 <?php $this->title = "Accueil"; ?>
 <?= $this->session->show('addArticle'); ?>
+<header>
+    <?php include('../templates/users/navUser.php'); ?>
+</header>
 <h1>Un billet pour l'Alaska</h1>
 <?php foreach ($articles as $article) : ?>
     <div>
