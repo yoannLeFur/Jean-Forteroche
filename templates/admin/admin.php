@@ -1,3 +1,6 @@
+<header>
+    <?php include('../templates/admin/navAdmin.php'); ?>
+</header>
 <div>
     <h1>Administration</h1>
 </div>

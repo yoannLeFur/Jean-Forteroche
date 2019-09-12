@@ -1,6 +1,7 @@
 <?php $this->title = "Nouvel article"; ?>
-<h1>Mon blog</h1>
-<p>En construction</p>
+<header>
+    <?php include('../templates/admin/navAdmin.php'); ?>
+</header>
 <div>
     <form method="post" action="../public/index.php?route=addArticle">
         <div>
@@ -31,5 +32,4 @@
         </div>
         <input type="submit" value="Envoyer" id="submit" name="submit">
     </form>
-    <a href="../public/index.php?route=admin">Retour à l'administration</a>
 </div>

@@ -1,4 +1,7 @@
 <?php $this->title = "modifier un article"; ?>
+<header>
+    <?php include('../templates/admin/navAdmin.php'); ?>
+</header>
 <h1>Un billet pour l'alaska</h1>
 <div>
     <form method="post" action="../public/index.php?route=editArticle&articleId=<?= strip_tags($article->getId()); ?>">
@@ -28,5 +31,4 @@
         </div>
         <input type="submit" value="Envoyer" id="submit" name="submit">
     </form>
-    <a href="../public/index.php?route=admin">Retour à l'administration</a>
 </div>

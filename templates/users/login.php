@@ -1,3 +1,6 @@
+<header>
+    <?php include('../templates/users/navUser.php'); ?>
+</header>
 <div>
     <h1>Un billet pour l'alaska</h1>
 </div>

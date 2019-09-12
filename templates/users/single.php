@@ -1,4 +1,7 @@
 <?php $this->title = "Article"; ?>
+<header>
+    <?php include('../templates/users/navUser.php'); ?>
+</header>
 <h1>Un billet pour l'Alaska</h1>
 <a href="../public/index.php">Retour à l'accueil</a>
 <div>

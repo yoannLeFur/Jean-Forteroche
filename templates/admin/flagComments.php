@@ -1,7 +1,9 @@
-<div class="row mx-0">
-    <div class="col-12 mt-5 pb-3">
-        <h1 class="text-center">Administration</h1>
-        <a href="../public/index.php?route=admin">Retour à l'administration</a>
+<header>
+    <?php include('../templates/admin/navAdmin.php'); ?>
+</header>
+<div>
+    <div>
+        <h1>Administration</h1>
     </div>
 
     <?php foreach ($comments as $comment) : ?>
