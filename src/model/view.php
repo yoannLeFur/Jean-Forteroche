@@ -17,7 +17,6 @@ class View
         $this->session = $this->request->getSession();
     }
 
-
     public function renderUsers($template, $data = [])
     {
         $this->file = '../templates/users/'.$template.'.php';
