@@ -10,8 +10,12 @@ class FrontController extends Controller
 
     public function home()
     {
+        return $this->view->renderUsers('home');
+    }
+    public function articles()
+    {
         $articles = $this->articleDAO->getArticles();
-        return $this->view->renderUsers('home', [
+        return $this->view->renderUsers('articles', [
             'articles' => $articles
         ]);
     }
@@ -50,6 +54,7 @@ class FrontController extends Controller
                 $this->session->set('login', 'Content de vous revoir');
                 $this->session->set('id', $result['result']['id']);
                 $this->session->set('email', $post->get('email'));
+                $this->session->set('pseudo', $post->get('pseudo'));
                 header('Location: ../public/index.php?route=admin');
             }
             else {
@@ -61,4 +66,8 @@ class FrontController extends Controller
         }
         return $this->view->renderUsers('login');
     }
+
+
+
+
 }

@@ -1,0 +1,41 @@
+#container {
+    position: relative;
+    width: 100%;
+}
+
+.img {
+    width: 100vw;
+    height: 100vh;
+    background-size: 100%;
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)
+    ),url(../img/alaska.jpg);
+    padding: 200px 0 0;
+}
+a {
+    text-decoration: none;
+}
+
+.h1-title {
+    color: #ffffff;
+    text-align: center;
+}
+.h1-title:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+.h1-title h1{
+    font-size: 50px;
+}
+.h1-title p {
+    font-size: 35px;
+}
+
+.link {
+    padding: 130px 5px;
+}
+
+#footer {
+    width: 100%;
+    bottom: 0;
+}

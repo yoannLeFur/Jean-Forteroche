@@ -33,7 +33,9 @@ class Router
         try {
             if (isset($route)) {
 
-                if ($route === 'article') {
+                if ($route === 'frontArticles') {
+                    $this->frontController->articles();
+                } elseif ($route === 'article') {
                     $this->frontController->article($this->request->getGet()->get('articleId'));
                 } elseif ($route === 'addComment') {
                     $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get('articleId'));
