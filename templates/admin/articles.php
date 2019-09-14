@@ -2,10 +2,18 @@
 <header>
     <?php include('../templates/admin/header.php'); ?>
 </header>
-
-<div class="row mx-0">
-    <div class="col-12 mt-5 py-3">
-        <h1 class="text-center">Liste des articles publiés</h1>
+<main>
+    <div class="row mx-0">
+        <div class="col-12 mt-5 pt-2">
+            <p class="font-weight-bold text-center"><?= $this->session->show('editArticle'); ?></p>
+            <p class="font-weight-bold text-center"><?= $this->session->show('deleteArticle'); ?></p>
+            <p class="font-weight-bold text-center"><?= $this->session->show('addArticle'); ?></p>
+        </div>
+    </div>
+    <div class="row mx-0">
+        <div class="col-12 mt-5  pt-1 pb-3">
+            <h1 class="text-center">Liste des articles publiés</h1>
+        </div>
     </div>
     <div class="row mx-0">
         <div class="col-12 py-2 px-0">
@@ -39,4 +47,4 @@
             <?php endforeach; ?>
         </div>
     </div>
-</div>
+</main>

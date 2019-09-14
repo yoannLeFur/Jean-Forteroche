@@ -27,7 +27,7 @@ class BackController extends Controller
 
             $this->articleDAO->addArticle($post);
             $this->session->set('addArticle', 'Le nouvel article a bien été ajouté');
-            header('Location: ../public/index.php?route=admin');
+            header('Location: ../public/index.php?route=articles');
         }
         return $this->view->renderAdmin('addArticle', [
             'post' => $post
@@ -51,7 +51,7 @@ class BackController extends Controller
     {
         $this->articleDAO->deleteArticle($articleId);
         $this->session->set('deleteArticle', 'L\' article a bien été supprimé');
-        header('Location: ../public/index.php?route=admin');
+        header('Location: ../public/index.php?route=articles');
     }
 
 
@@ -61,7 +61,6 @@ class BackController extends Controller
         return $this->view->renderAdmin('flagComments', [
             'comments' => $comments
         ]);
-
     }
 
     public function unflagComment($commentId)
@@ -75,7 +74,7 @@ class BackController extends Controller
     {
         $this->commentDAO->deleteComment($commentId);
         $this->session->set('deleteComment', 'Le commentaire a bien été supprimé');
-        header('Location: ../public/index.php?route=admin');
+        header('Location: ../public/index.php?route=flagComments');
     }
 
     public function logout()
