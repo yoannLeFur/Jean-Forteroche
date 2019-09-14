@@ -4,7 +4,6 @@ namespace App\config;
 
 class Parameter
 {
-
     private $parameter;
 
     public function __construct($parameter)

@@ -5,10 +5,15 @@
 </header>
 <main>
     <div class="row mx-0">
-        <div class="col-lg-2 col-md-1 col-sm-1 mt-5 py-5">
+        <div class="col-12 mt-5 pt-2">
+            <p class="font-weight-bold text-center"><?= $this->session->show('addComment'); ?></p>
+        </div>
+    </div>
+    <div class="row mx-0">
+        <div class="col-lg-2 col-md-1 col-sm-1 mt-5 pt-3 pb-5">
             <a class="h1 px-3" href="../public/index.php?route=frontArticles"><i class="fa fa-chevron-left"></i></a>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-5 mt-5 py-5">
+        <div class="col-lg-8 col-md-8 col-sm-5 mt-5 pt-3 pb-5">
             <h1 class="text-center p-0">Un billet pour l'Alaska</h1>
         </div>
     </div>

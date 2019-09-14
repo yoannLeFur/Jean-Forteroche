@@ -3,7 +3,12 @@
 </header>
 <main>
     <div class="row mx-0">
-        <div class="col-12 mt-5 py-5">
+        <div class="col-12 mt-5 pt-2">
+            <p class="font-weight-bold text-center"><?= $this->session->show('login'); ?></p>
+        </div>
+    </div>
+    <div class="row mx-0">
+        <div class="col-12 mt-5 pt-2 pb-5">
             <h1 class="text-center">Administration</h1>
         </div>
     </div>

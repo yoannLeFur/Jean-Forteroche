@@ -1,11 +1,15 @@
 <?php $this->title = "Accueil"; ?>
-<?= $this->session->show('addArticle'); ?>
 <header>
     <?php include('../templates/users/header.php'); ?>
 </header>
 <main>
     <div class="row mx-0">
-        <div class="col-12 mt-5 py-5">
+        <div class="col-12 mt-5 pt-2">
+            <p class="font-weight-bold text-center"><?= $this->session->show('flagComment'); ?></p>
+        </div>
+    </div>
+    <div class="row mx-0">
+        <div class="col-12 mt-5 pt-3 pb-5">
             <h1 class="text-center">Un billet pour l'Alaska</h1>
         </div>
     </div>

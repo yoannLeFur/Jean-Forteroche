@@ -2,5 +2,6 @@
     <div class="img">
         <h1>Un billet pour l'Alaska</h1>
         <p>Le nouveau roman de Jean Forteroche à découvrir</p>
+        <p><?= $this->session->show('logout'); ?></p>
     </div>
 </a>
