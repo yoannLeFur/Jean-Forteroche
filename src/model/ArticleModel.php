@@ -1,11 +1,11 @@
 <?php
 
-namespace App\src\DAO;
+namespace App\src\model;
 
 use App\config\Parameter;
-use App\src\model\Article;
+use App\src\entity\Article;
 
-class ArticleDAO extends DAO {
+class ArticleModel extends Model {
 
     private function buildObject($row)
     {

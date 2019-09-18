@@ -3,16 +3,16 @@
 namespace App\src\controller;
 
 use App\config\Request;
-use App\src\DAO\ArticleDAO;
-use App\src\DAO\CommentDAO;
-use App\src\DAO\UserDAO;
-use App\src\model\View;
+use App\src\model\ArticleModel;
+use App\src\model\CommentModel;
+use App\src\model\UserModel;
+use App\src\entity\View;
 
 abstract class Controller {
 
-    protected $articleDAO;
-    protected $commentDAO;
-    protected $userDAO;
+    protected $articleModel;
+    protected $commentModel;
+    protected $userModel;
     protected $view;
     private $request;
     protected $get;
@@ -22,9 +22,9 @@ abstract class Controller {
 
     public function __construct()
     {
-        $this->articleDAO = new ArticleDAO();
-        $this->commentDAO = new CommentDAO();
-        $this->userDAO = new UserDAO();
+        $this->articleModel = new ArticleModel();
+        $this->commentModel = new CommentModel();
+        $this->userModel = new UserModel();
         $this->view = new View();
         $this->request = new Request();
         $this->get = $this->request->getGet();

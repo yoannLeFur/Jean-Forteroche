@@ -1,11 +1,11 @@
 <?php
 
-namespace App\src\DAO;
+namespace App\src\model;
 
 use PDO;
 use Exception;
 
-abstract class DAO {
+abstract class Model {
 
     private $connection;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\src\DAO;
+namespace App\src\model;
 use App\config\Parameter;
-use App\src\model\Comment;
+use App\src\entity\Comment;
 
-class CommentDAO extends DAO {
+class CommentModel extends Model {
 
     private function buildObject($row)
     {

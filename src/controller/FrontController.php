@@ -10,21 +10,21 @@ class FrontController extends Controller
 
     public function home()
     {
-        return $this->view->renderUsers('home');
+        return $this->view->render('users','home');
     }
     public function articles()
     {
-        $articles = $this->articleDAO->getArticles();
-        return $this->view->renderUsers('articles', [
+        $articles = $this->articleModel->getArticles();
+        return $this->view->render('users','articles', [
             'articles' => $articles
         ]);
     }
 
     public function article($articleId)
     {
-        $article = $this->articleDAO->getArticle($articleId);
-        $comments = $this->commentDAO->getCommentsFromArticle($articleId);
-        return $this->view->renderUsers('single', [
+        $article = $this->articleModel->getArticle($articleId);
+        $comments = $this->commentModel->getCommentsFromArticle($articleId);
+        return $this->view->render('users', 'single', [
             'article' => $article,
             'comments' => $comments
         ]);
@@ -33,7 +33,7 @@ class FrontController extends Controller
     public function addComment(Parameter $post, $articleId)
     {
         if($post->get('submit')) {
-            $this->commentDAO->addComment($post, $articleId);
+            $this->commentModel->addComment($post, $articleId);
             $this->session->set('addComment', 'Le nouveau commentaire a bien été ajouté');
             header('Location: ../public/index.php?route=article&articleId=' . $articleId);
         }
@@ -41,7 +41,7 @@ class FrontController extends Controller
 
     public function flagComment($commentId)
     {
-        $this->commentDAO->flagComment($commentId);
+        $this->commentModel->flagComment($commentId);
         $this->session->set('flagComment', 'Le commentaire a bien été signalé');
         header('Location: ../public/index.php?route=frontArticles');
     }
@@ -49,7 +49,7 @@ class FrontController extends Controller
     public function login(Parameter $post)
     {
         if($post->get('submit')) {
-            $result = $this->userDAO->login($post);
+            $result = $this->userModel->login($post);
             if($result && $result['isPasswordValid']) {
                 $this->session->set('login', 'Content de vous revoir');
                 $this->session->set('id', $result['result']['id']);
@@ -59,12 +59,12 @@ class FrontController extends Controller
             }
             else {
                 $this->session->set('error_login', 'Le pseudo ou le mot de passe sont incorrects');
-                return $this->view->renderAdmin('login', [
+                return $this->view->render('admin','login', [
                     'post'=> $post
                 ]);
             }
         }
-        return $this->view->renderUsers('login');
+        return $this->view->render('users','login');
     }
 
 

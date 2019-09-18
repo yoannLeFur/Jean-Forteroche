@@ -1,10 +1,10 @@
 <?php
 
-namespace App\src\DAO;
+namespace App\src\model;
 
 use App\config\Parameter;
 
-class UserDAO extends DAO {
+class UserModel extends Model {
 
     public function login(Parameter $post)
     {
