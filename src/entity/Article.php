@@ -1,8 +1,8 @@
 <?php
 
-namespace App\src\model;
+namespace App\src\entity;
 
-class Comment
+class Article
 {
     /**
      * @var int
@@ -12,7 +12,7 @@ class Comment
     /**
      * @var string
      */
-    private $pseudo;
+    private $title;
 
     /**
      * @var string
@@ -20,9 +20,9 @@ class Comment
     private $content;
 
     /**
-     * @var bool
+     * @var string
      */
-    private $flag;
+    private $author;
 
     /**
      * @var \DateTime
@@ -48,17 +48,17 @@ class Comment
     /**
      * @return string
      */
-    public function getPseudo()
+    public function getTitle()
     {
-        return $this->pseudo;
+        return $this->title;
     }
 
     /**
-     * @param string $pseudo
+     * @param string $title
      */
-    public function setPseudo($pseudo)
+    public function setTitle($title)
     {
-        $this->pseudo = $pseudo;
+        $this->title = $title;
     }
 
     /**
@@ -78,19 +78,19 @@ class Comment
     }
 
     /**
-     * @return bool
+     * @return string
      */
-    public function isFlag()
+    public function getAuthor()
     {
-        return $this->flag;
+        return $this->author;
     }
 
     /**
-     * @param bool $flag
+     * @param string $author
      */
-    public function setFlag($flag)
+    public function setAuthor($author)
     {
-        $this->flag = $flag;
+        $this->author = $author;
     }
 
     /**

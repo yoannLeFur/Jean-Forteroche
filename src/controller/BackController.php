@@ -10,13 +10,13 @@ class BackController extends Controller
 
     public function admin()
     {
-        return $this->view->renderAdmin('admin');
+        return $this->view->render('admin','admin');
     }
 
     public function articles()
     {
-        $articles = $this->articleDAO->getArticles();
-        return $this->view->renderAdmin('articles', [
+        $articles = $this->articleModel->getArticles();
+        return $this->view->render('admin','articles', [
             'articles' => $articles
         ]);
     }
@@ -25,31 +25,31 @@ class BackController extends Controller
     {
         if ($post->get('submit')) {
 
-            $this->articleDAO->addArticle($post);
+            $this->articleModel->addArticle($post);
             $this->session->set('addArticle', 'Le nouvel article a bien été ajouté');
             header('Location: ../public/index.php?route=articles');
         }
-        return $this->view->renderAdmin('addArticle', [
+        return $this->view->render('admin','addArticle', [
             'post' => $post
         ]);
     }
 
     public function editArticle(Parameter $post, $articleId)
     {
-        $article = $this->articleDAO->getArticle($articleId);
+        $article = $this->articleModel->getArticle($articleId);
         if ($post->get('submit')) {
-            $this->articleDAO->editArticle($post, $articleId);
+            $this->articleModel->editArticle($post, $articleId);
             $this->session->set('editArticle', 'L\' article a bien été modifié');
             header('Location: ../public/index.php?route=articles');
         }
-        return $this->view->renderAdmin('editArticle', [
+        return $this->view->render('admin','editArticle', [
             'article' => $article
         ]);
     }
 
     public function deleteArticle($articleId)
     {
-        $this->articleDAO->deleteArticle($articleId);
+        $this->articleModel->deleteArticle($articleId);
         $this->session->set('deleteArticle', 'L\' article a bien été supprimé');
         header('Location: ../public/index.php?route=articles');
     }
@@ -57,22 +57,22 @@ class BackController extends Controller
 
     public function flagComments()
     {
-        $comments = $this->commentDAO->getFlagComments();
-        return $this->view->renderAdmin('flagComments', [
+        $comments = $this->commentModel->getFlagComments();
+        return $this->view->render('admin','flagComments', [
             'comments' => $comments
         ]);
     }
 
     public function unflagComment($commentId)
     {
-        $this->commentDAO->unflagComment($commentId);
+        $this->commentModel->unflagComment($commentId);
         $this->session->set('unflagComment', 'Le commentaire a bien été désignalé');
         header('Location: ../public/index.php?route=flagComments');
     }
 
     public function deleteComment($commentId)
     {
-        $this->commentDAO->deleteComment($commentId);
+        $this->commentModel->deleteComment($commentId);
         $this->session->set('deleteComment', 'Le commentaire a bien été supprimé');
         header('Location: ../public/index.php?route=flagComments');
     }
