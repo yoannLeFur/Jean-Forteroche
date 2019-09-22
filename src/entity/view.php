@@ -17,11 +17,11 @@ class View
         $this->session = $this->request->getSession();
     }
 
-    public function render($folder, $template, $data = [])
+    public function render($folder, $views, $data = [])
     {
-        $this->file = '../templates/'.$folder.'/'.$template.'.php';
+        $this->file = '../views/'.$folder.'/'.$views.'.php';
         $content  = $this->renderFile($this->file, $data);
-        $view = $this->renderFile('../templates/layout.php', [
+        $view = $this->renderFile('../views/layout.php', [
             'title' => $this->title,
             'content' => $content
         ]);

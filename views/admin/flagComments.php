@@ -1,6 +1,6 @@
 <?php $this->title = "les commentaires signalés"; ?>
 <header>
-    <?php include('../templates/admin/header.php'); ?>
+    <?php include('../views/admin/header.php'); ?>
 </header>
 <div class="row mx-0">
     <div class="col-12 mt-5 pt-2">

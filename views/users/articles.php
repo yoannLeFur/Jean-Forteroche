@@ -1,6 +1,6 @@
 <?php $this->title = "Accueil"; ?>
 <header>
-    <?php include('../templates/users/header.php'); ?>
+    <?php include('../views/users/header.php'); ?>
 </header>
 <main>
     <div class="row mx-0">
@@ -21,7 +21,7 @@
                     <h2><?= ucfirst(strip_tags($article->getTitle())); ?></h2>
                     <p class="text-left"><?= ucfirst(substr(strip_tags($article->getContent()), 0, 300)); ?>
                         &nbsp;[...]</p>
-                    <p class="text-left">Créé le : <small><?= strip_tags($article->getCreatedAt()); ?></small>
+                    <p class="text-left">Créé le : <small><?= strip_tags(date('d/m/Y H:i:s', strtotime($article->getCreatedAt()))); ?></small>
                         par <?= ucfirst(strip_tags($article->getAuthor())); ?></p>
                 </a>
             <?php endforeach; ?>
@@ -29,5 +29,5 @@
     </div>
 </main>
 <footer>
-    <?php include('../templates/users/footer.php'); ?>
+    <?php include('../views/users/footer.php'); ?>
 </footer>

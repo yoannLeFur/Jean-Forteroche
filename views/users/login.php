@@ -1,5 +1,5 @@
 <header>
-    <?php include('../templates/users/header.php'); ?>
+    <?php include('../views/users/header.php'); ?>
 </header>
 <main>
     <p class=" col-12 py-2 text-center"><?= $this->session->show('register'); ?></p>
@@ -37,5 +37,5 @@
     </div>
 </main>
 <footer>
-    <?php include('../templates/users/footer.php'); ?>
+    <?php include('../views/users/footer.php'); ?>
 </footer>

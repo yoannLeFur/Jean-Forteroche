@@ -1,7 +1,7 @@
 <?php $this->title = "Article"; ?>
 
 <header>
-    <?php include('../templates/users/header.php'); ?>
+    <?php include('../views/users/header.php'); ?>
 </header>
 <main>
     <div class="row mx-0">
@@ -31,7 +31,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <p>Créé le : <small><?= strip_tags($article->getCreatedAt()); ?></small>
+                    <p>Créé le : <small><?= strip_tags(date('d/m/Y H:i:s', strtotime($article->getCreatedAt()))) ?></small>
                         par <?= ucfirst(strip_tags($article->getAuthor())); ?></p>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                                 <h4><?= ucfirst(strip_tags($comment->getPseudo())); ?></h4>
                             </div>
                             <div class="col-6 text-right">
-                                <p>Posté le <?= strip_tags($comment->getCreatedAt()); ?></p>
+                                <p>Posté le <?= strip_tags(date('d/m/Y H:i:s', strtotime($article->getCreatedAt()))); ?></p>
                             </div>
                         </div>
                         <div class="row mx-0">
@@ -114,5 +114,5 @@
     </div>
 </main>
 <footer>
-    <?php include('../templates/users/footer.php'); ?>
+    <?php include('../views/users/footer.php'); ?>
 </footer>

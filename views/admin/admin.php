@@ -1,5 +1,5 @@
 <header>
-    <?php include('../templates/admin/header.php'); ?>
+    <?php include('../views/admin/header.php'); ?>
 </header>
 <main>
     <div class="row mx-0">

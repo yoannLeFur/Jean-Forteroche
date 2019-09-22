@@ -1,6 +1,6 @@
 <?php $this->title = "Nouvel article"; ?>
 
-<?php include('../templates/admin/header.php'); ?>
+<?php include('../views/admin/header.php'); ?>
 
 <div class="row mx-0">
     <div class="col-12 mt-5 py-3">
