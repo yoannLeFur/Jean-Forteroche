@@ -7,8 +7,4 @@
             <a class="btn btn-danger text-white px-3 py-2 text-white" href="../public/index.php">Retour à l'accueil</a>
         </div>
     </div>
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> develop

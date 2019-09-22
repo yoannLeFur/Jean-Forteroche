@@ -61,6 +61,8 @@ class Router
                     $this->backController->logout();
                 } elseif($route === 'admin' && $session->get('email')){
                     $this->backController->admin();
+                } elseif($route === 'admin'){
+                    $this->frontController->home();
                 } else {
                     $this->errorController->errorNotFound();
                 }
