@@ -1,6 +1,6 @@
 <?php $this->title = "Les articles"; ?>
 <header>
-    <?php include('../templates/admin/header.php'); ?>
+    <?php include('../views/admin/header.php'); ?>
 </header>
 <main>
     <div class="row mx-0">
@@ -39,8 +39,8 @@
                     </div>
                     <div class="row mx-0">
                         <div class="col-12">
-                            <p>Créé le : <small><?= strip_tags($article->getCreatedAt()); ?></small>
-                                par <?= ucfirst(strip_tags($article->getAuthor())); ?></p>
+                            <p>Créé le : <small><?= strip_tags(date('d/m/Y H:i:s', strtotime($article->getCreatedAt()))); ?></small>
+                                par <?= ucfirst(strip_tags($article->getAuthor())); ?></php>
                         </div>
                     </div>
                 </div>

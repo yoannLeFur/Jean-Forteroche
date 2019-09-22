@@ -1,5 +1,7 @@
 'use strict'
 
 tinymce.init({
-    selector: 'textarea'
+    selector: 'textarea',
+    language: 'fr',
+    theme: 'advanced'
 })
