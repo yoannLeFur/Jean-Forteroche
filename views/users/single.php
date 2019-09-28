@@ -83,7 +83,7 @@
                                 <h4><?= ucfirst(strip_tags($comment->getPseudo())); ?></h4>
                             </div>
                             <div class="col-6 text-right">
-                                <p>Posté le <?= strip_tags(date('d/m/Y H:i:s', strtotime($article->getCreatedAt()))); ?></p>
+                                <p>Posté le <?= strip_tags(date('d/m/Y H:i:s', strtotime($comment->getCreatedAt()))); ?></p>
                             </div>
                         </div>
                         <div class="row mx-0">

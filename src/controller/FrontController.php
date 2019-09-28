@@ -16,7 +16,7 @@ class FrontController extends Controller
     {
         $articles = $this->articleModel->getArticles();
         return $this->view->render('users','articles', [
-            'articles' => $articles
+        'articles' => $articles
         ]);
     }
 

@@ -37,7 +37,7 @@
                             <p><?= ucfirst(strip_tags($comment->getContent())); ?></p>
                         </div>
                         <div class="col-12">
-                            <p>Posté le <?= strip_tags($comment->getCreatedAt()); ?></p>
+                            <p>Posté le <?= strip_tags(date('d/m/Y H:i:s', strtotime($comment->getCreatedAt()))); ?></p>
                         </div>
                     </div>
                 </div>

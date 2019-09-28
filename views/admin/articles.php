@@ -40,7 +40,7 @@
                     <div class="row mx-0">
                         <div class="col-12">
                             <p>Créé le : <small><?= strip_tags(date('d/m/Y H:i:s', strtotime($article->getCreatedAt()))); ?></small>
-                                par <?= ucfirst(strip_tags($article->getAuthor())); ?></php>
+                                par <?= ucfirst(strip_tags($article->getAuthor())); ?></p>
                         </div>
                     </div>
                 </div>
