@@ -101,7 +101,7 @@
                                 <div class="offset-10 col-2 text-right">
                                     <a class="btn btn-danger text-white"
                                        href="../public/index.php?route=flagComment&commentId=<?= $comment->getId(); ?>"
-                                       title="Signalé le commentaire"><i
+                                       title="Signaler le commentaire"><i
                                                 class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
                                 </div>
                             <?php endif; ?>
